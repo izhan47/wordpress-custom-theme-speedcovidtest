@@ -10,7 +10,7 @@ function wpdocs_theme_name_scripts()
    wp_enqueue_script('js-vendors', get_template_directory_uri() . '/js/vendors.js', false, '1.1', 'all');
    wp_enqueue_script('js-app', get_template_directory_uri() . '/js/app.js', false, '2.03', 'all');
    wp_enqueue_script('js-fa', 'https://use.fontawesome.com/releases/v5.15.3/js/all.js', false, '1.1', 'all');
-   wp_enqueue_script('js-gmaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBidxDyL8Und-lvOCnB3ff387u3IPlmdk8&libraries=&v=weekly', false, '1.1', 'all');
+   wp_enqueue_script('js-gmaps', 'https://maps.googleapis.com/maps/api/js?key=#&libraries=&v=weekly', false, '1.1', 'all');
    
    if (isset($_GET['footer_test'])) {
       wp_enqueue_script('js-footer-common',get_template_directory_uri().'/js/footer-common.js',['jquery'],null,true);
