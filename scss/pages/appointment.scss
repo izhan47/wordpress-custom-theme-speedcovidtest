@@ -1,0 +1,223 @@
+.appointment {
+    border-bottom: 1px solid #e4e4ff;
+    margin-bottom: 50px;
+
+    &__content {
+        max-width: 1100px;
+    }
+    &__nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        column-gap: 4px;
+        margin-bottom: 16px;
+    }
+
+    &__nav-item {
+        flex: 1 0 auto;
+        margin-bottom: 15px;
+        min-width: 120px;
+    }
+
+    &__filter {
+        margin-bottom: 28px;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 137px;
+        padding: 15px 0 35px;
+        border-top: 1px solid #e4e4ff;
+
+        & > p {
+            color: rgba($textColor, 0.75);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+            margin-bottom: 10px;
+
+            & > strong {
+                font-weight: 600;
+            }
+
+            & > svg {
+                color: $mainColor2;
+                margin-right: 4px;
+            }
+        }
+
+        & .link {
+            font-size: 16px;
+            &:before {
+                content: "\f078";
+                font-size: 12px;
+            }
+
+            @media (min-width: 992px) {
+                &:hover {
+                    &:before {
+                        transform: translate(0, -50%);
+                    }
+                }
+            }
+        }
+    }
+
+    &__footer-text-collapse {
+        max-width: 700px;
+        margin: 0 auto 10px;
+        display: none;
+    }
+
+    &__footer-btn {
+        &._is-open {
+            &::before {
+                transform: translate(0, -50%) scale(1, -1);
+            }
+        }
+    }
+}
+
+.l-nav-item {
+    display: block;
+    transition: all 0.3s ease;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    color: rgba($textColor, 0.55);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.2em;
+    min-height: 42px;
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        height: 6px;
+        width: 100%;
+        border-radius: 3px;
+        background-color: rgba($textColor, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    @media (min-width: 992px) {
+        &:hover {
+            &:not(.active) {
+                &:before {
+                    background-color: rgba($textColor, 0.18);
+                }
+            }
+        }
+    }
+
+    &.active {
+        color: $mainColor2;
+        font-weight: 700;
+
+        &:before {
+            background-color: $mainColor2;
+        }
+    }
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    &__title {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.2em;
+        margin-bottom: 6px;
+    }
+
+    &__body {
+
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+    
+        }
+    }
+
+    &__col {
+        flex: 0 1 calc(50% - 5px);
+        margin-bottom: 12px;
+
+        & .select-wrap {
+            & .select__title {
+                min-height: 53px;
+                padding: 10px 35px 10px 21px;
+            }
+
+            & .select__value {
+                &:before {
+                    right: 20px;
+                }
+            }
+        }
+    }
+
+    &__label {
+        color: $mainColor2;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.2em;
+        margin-bottom: 6px;
+    }
+
+    &__btn {
+        align-self: flex-end;
+        &.btn-default {
+            min-width: 177px;
+        }
+    }
+}
+
+.more-info-card {
+    border: 1px solid #c6cdd5;
+    padding: 11px;
+    display: flex;
+
+    &__img {
+        flex: 0 0 59px;
+        height: 103px;
+        margin-right: 23px;
+    }
+
+    &__text-wrap {
+        flex: 1 1 auto;
+    }
+
+    &__title {
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        line-height: 1.2em;
+        margin-top: 5px;
+    }
+
+    &__text {
+        color: #3f496a;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 21px;
+
+        p{
+            margin-bottom: 7px;
+        }
+    }
+
+    &__link {
+        font-size: 15px;
+        text-decoration: underline;
+
+        &:before {
+            font-size: 11px;
+        }
+    }
+}

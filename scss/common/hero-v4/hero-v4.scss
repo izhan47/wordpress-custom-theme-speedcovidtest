@@ -1,0 +1,31 @@
+.hero-v4 {
+  background-color: $mainColor4;
+
+  &__body {
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    color: #fff;
+
+    & nav.rank-math-breadcrumb {
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.05em;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-align: center;
+
+    @media (max-width: $md3+px) {
+      font-size: 40px;
+    }
+  }
+}

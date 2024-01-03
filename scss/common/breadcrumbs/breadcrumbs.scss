@@ -1,0 +1,39 @@
+nav.rank-math-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+
+  p a {
+    color: rgba(#fff, 0.67);
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    font-size: 13px;
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  span {
+    color: rgba(#fff, 0.67);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.3em;
+
+    &:not(:last-child) {
+      &:after {
+        content: "»";
+        margin: 0 5px 0 5px;
+      }
+    }
+
+    & a {
+      color: rgba(#fff, 0.67);
+      transition: all 0.3s ease;
+      text-decoration: underline;
+      @media (min-width: 992px) {
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

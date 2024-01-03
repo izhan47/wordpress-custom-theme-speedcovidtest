@@ -1,0 +1,88 @@
+.text-page {
+  & .hero-v3 {
+    margin-bottom: 104px;
+    @media (max-width: $md3+px) {
+      margin-bottom: 50px;
+    }
+    & nav.rank-math-breadcrumb {
+      margin-bottom: 7px;
+    }
+  }
+}
+.text {
+  margin-bottom: 100px;
+
+  @media (max-width: $md3+px) {
+    margin-bottom: 50px;
+  }
+
+  &__body {
+    max-width: 870px;
+  }
+
+  &.text-content {
+    & h1 {
+      color: $textColor;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2em;
+      margin-bottom: 0.28em;
+      margin-top: 0;
+    }
+
+    & h2 {
+      color: $textColor;
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.2em;
+      margin-bottom: 0.4em;
+    }
+
+    & h3 {
+      color: $textColor;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.2em;
+      margin-bottom: 0.4em;
+    }
+
+    & h4 {
+      color: $textColor;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2em;
+      margin-bottom: 0.4em;
+    }
+
+    & ul {
+      margin-bottom: 1.66em;
+      & li {
+        padding-left: 1.2em;
+        margin-bottom: 0;
+        &:before {
+          content: "";
+          height: 7px;
+          width: 7px;
+          background-color: $mainColor2;
+          border-radius: 50%;
+          top: 0.5em;
+          left: 0.1em;
+        }
+      }
+    }
+
+    & p {
+      margin-bottom: 1.66em;
+
+      & ~ h2 {
+        margin-top: 1.45em;
+      }
+      & ~ h3 {
+        margin-top: 1.45em;
+      }
+      & ~ h4 {
+        margin-top: 1.85em;
+      }
+    }
+  }
+}

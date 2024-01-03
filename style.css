@@ -1,0 +1,352 @@
+/*
+Theme Name: SpeedCovidTest
+Theme URI: https://speedcovidtest.nl
+Author: Galaxy Coding
+Author URI: https://galaxycoding.com/
+Text Domain: speedcovidtest
+*/
+
+@media (min-width: 1181px) { 
+   .promo-header__list.five>li {
+      flex: 0 1 25%;
+      margin-bottom: 30px; 
+   }
+ }
+ 
+ @media (max-width: 1180px) and (min-width: 575.99px) { 
+    .promo-header__list.five>li {
+       flex: 0 1 50%;
+       margin-bottom: 30px; 
+    }
+ }
+
+   
+   .menu-item-has-children a:first-of-type {
+       position: relative;
+       padding-right: 24px;
+       cursor: pointer;
+   }
+
+   .menu-item-has-children a:first-of-type:before {
+       position: absolute;
+       font-size: 11px;
+       top: 50%;
+       right: 4px;
+       transform: translateY(-50%);
+       transition: all 0.3s ease;
+       font-family: "Font Awesome 5 Free";
+       font-weight: 900;
+       content: "\f078";
+   }
+
+   .menu-item-has-children .sub-menu a:before{
+       display: none;
+   }
+
+   @media (min-width: 992px){
+       .menu-item-has-children .sub-menu .menu__link {
+           color: #06113a;
+           line-height: 30px;
+           padding: 0 16px;
+           white-space: nowrap;
+           width: 100%;
+       }
+
+       .menu-item-has-children .sub-menu .menu__link:hover {
+           background-color: rgba(6,17,58,.2);
+       } 
+   }  
+
+   html{
+       margin-top: 32px;
+   }
+
+   @media(max-width: 825px){
+       html{
+           margin-top: 56px;
+       }
+   }
+
+   .p-fixed{
+       position: fixed;
+       top: 0;
+       left: 0;
+       z-index: 20;
+       width: 100%;
+   }
+
+   .p-fixed .topbar, .p-fixed header.header{
+       display: block;
+       position: relative;
+       left: 0px !important;
+       top: 0px !important;
+       width: 100%;
+   }
+
+   .hero-v3._padding-top, .hero-v4._padding-top, .hero-v2._padding-top{
+       padding-top: 96px;
+   }
+
+   @media(max-width: 767px){
+       .hero-v3._padding-top, .hero-v4._padding-top, .hero-v2._padding-top{
+           padding-top: 72px;
+       }
+
+       .header, .header.header_solid {
+           background-color: #395c7a;
+       }
+   }
+
+   @media(min-width: 767px){
+       header .wpml-ls-legacy-dropdown{
+           float: right;
+           padding: 7px 0px;
+           margin-left: 30px;
+           margin-right: 0px;
+       }
+
+       .menu-header-menu-container{
+           float: left;
+       }
+   }
+
+   @media(max-width: 1150px) and (min-width: 991px){
+       .header__menu {
+           margin-left: auto;
+           margin-right: 15px;
+           flex: 0 0 auto;
+       }
+   }
+
+   @media(max-width: 440px){
+       .header__btn.btn-default{
+           min-height: unset;
+           font-size: 14px;
+           padding: 10px 12px;
+       }
+   }
+   
+   
+   .rating-footer #tp-widget-wrapper { margin-left: 0 !important; margin-top: 15px !important; }
+   
+   .uitslag-btn { background: #fff; box-shadow: 0 -2px 5px 0 rgba(0,0,0,0.07); position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; padding: 10px; text-align: center; }
+   .uitslag-btn .locations-b__footer-btn { background: #1B96C6; color: #fff; min-width: 0; position: absolute; top: 50%; left: 20px; transform: translateY(-50%) }
+   
+   .uitslag-btn{
+       display: flex;
+       align-items: center;
+       min-height: 68px;
+   }
+   
+   .topbar a{
+       color: white;
+       text-decoration: underline;
+       transition: all 0.3s ease-in-out;
+   }
+   
+   .topbar a:hover{
+       opacity: 0.6;
+   }
+   
+   .uitslag-btn.realtime-bar{
+       display: none !important;
+       opacity: 0 !important;
+   }
+   
+   .uitslag-btn.realtime-bar.shown{
+       display: flex !important;
+       opacity: 1 !important;
+   }
+   
+   .realtime-bookings{
+      width: 100%;
+      text-align: center;
+      transition: opacity 0.3s ease-in-out;
+      display: flex;
+      justify-content: center;
+   }
+   
+   .realtime-bookings .afspraak-maken{
+       color: #43b91f;
+       text-decoration: underline;
+       background: transparent;
+       margin-left: 15px;
+       transition: all .3s ease;
+   }
+   
+   .realtime-bookings .afspraak-maken:hover{
+       color: #1b96c6;
+   }
+   
+   .blob {
+       background: #42ba1d;
+       border-radius: 50%;
+       height: 14px;
+       width: 14px;
+       box-shadow: 0 0 0 0 rgb(0 0 0);
+       transform: scale(1);
+       animation: pulse 2s infinite;
+       position: relative;
+       z-index: 2;
+       display: inline-block;
+       margin-right: 12px;
+       float: left;
+       margin-top: 1px;
+   }
+   
+   @keyframes pulse {
+      0% {
+         transform: scale(0.95);
+         box-shadow: 0 0 0 0 rgba(66, 186, 29, 0.7);
+      }
+   
+      70% {
+         transform: scale(1);
+         box-shadow: 0 0 0 10px rgba(66, 186, 29, 0);
+      }
+   
+      100% {
+         transform: scale(0.95);
+         box-shadow: 0 0 0 0 rgba(66, 186, 29, 0);
+      }
+   }
+   
+   @media(max-width: 1100px){
+       .realtime-bookings .afspraak-maken{
+           display: none;
+       }
+   }
+   
+   @media(max-width: 885px){
+       .realtime-bookings .afspraak-maken{
+           display: block;
+           font-size: 14px;
+       }
+   
+       .uitslag-btn.realtime-bar{
+           min-height: 60px;
+       }
+   
+       .uitslag-btn .locations-b__footer-btn{
+           display: none;
+       }
+   
+       .blob{
+           background: #42ba1d;
+           border-radius: 50%;
+           height: 10px;
+           width: 10px;
+           box-shadow: 0 0 0 0 rgb(0 0 0);
+           transform: scale(1);
+           animation: pulse 2s infinite;
+           position: relative;
+           z-index: 2;
+           display: inline-block;
+           margin-right: 7px;
+           float: left;
+           margin-top: 3px;
+       }
+   
+       .uitslag-btn.realtime-bar{
+           min-height: unset;
+       }
+       
+       .realtime-bookings{
+           display: flex;
+           flex-direction: row;
+           justify-content: space-between;
+           align-items: center;
+           padding: 0 15px;
+       }
+   
+       .realtime-bookings .information{
+           font-size: 13px;
+           max-width: 210px;
+           text-align: left;
+           line-height: normal;
+           padding-left: 15px;
+       }
+   }
+   
+   @media(max-width: 450px){
+       .realtime-bookings{
+           padding-left: 0px;
+           padding-right: 0px;
+       }
+   
+       .realtime-bookings .afspraak-maken {
+           display: block;
+           font-size: 12px;
+       }
+   }
+   
+   @media(max-width: 500px){
+     
+       iframe#b3qkf8gd3mt81642679449380{
+           right: 14px !important;
+           bottom: 80px !important;
+       }
+   }
+
+   .cn-button.bootstrap {
+       color: #fff;
+       background: #43B91F;
+       font-weight: 600;
+   }
+   .large {
+       display: flex;
+       align-items: center;
+       padding: 10px 20px;
+       min-height: 52px;
+       border-radius: 5px;
+       border: 1px solid rgba(21,52,82,.35);
+       background-color: #fff;
+       color: #06113a;
+       font-size: 16px;
+       font-weight: 400;
+       width: 100%;
+   }
+   .gfield_select {
+       background-color: #fff;
+         font-size: 16px;
+       font-weight: 400;
+          color: #06113a;
+   }
+   .gform_button {
+       background-color: #1b96c6;
+       box-shadow: 0 2px 0 #177fa8;
+       width: 100%;
+       min-height: 54px;
+         border-radius: 3px;
+         color: #fff;
+         font-weight: 700;
+   }	
+   
+   .text-content-contactform p { max-width: 710px; }
+   
+   .disclaimer_block{
+        padding: 50px 0px 45px;
+    }
+
+    .disclaimer_block .disclaimer-title svg{
+        margin-right: 7px;
+        width: 0.8em;
+    }
+
+    .diclaimer-content a{
+        text-decoration: underline;
+        transition: all .3s ease;
+        color: #1b96c6;
+    }
+
+    .diclaimer-content a:hover{
+        color: #43b91f;
+    }
+
+    .disclaimer-title{
+        margin-bottom: 8px;
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.2em;
+        margin-right: 33px;
+    }

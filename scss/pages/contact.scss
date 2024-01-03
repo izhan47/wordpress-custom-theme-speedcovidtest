@@ -1,0 +1,61 @@
+.contact-page {
+    & .locations-b {
+        @media (min-width: 992px) {
+            margin-bottom: 105px;
+        }
+    }
+}
+
+.contact-b {
+    padding: 77px 0 85px;
+    //background-color: #eaf3f9;
+
+    &.contact-b_light {
+        background-color: transparent;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 86px;
+        
+        @media (max-width: $md3+px) {
+            margin-bottom: 50px;
+        }
+    }
+
+    & .contact-form__title  {
+        margin-bottom: 14px;
+    }
+}
+
+.wpcf7-acceptance .wpcf7-list-item{
+    margin-left: 0px;
+}
+
+.wpcf7-response-output{
+    padding: 15px 10px !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+    background: #46b450;
+
+    &.form.failed{
+        background: #dc3232;;
+    }
+}
+
+/* CF7 Overwritten styles */
+.wpcf7-not-valid-tip{
+    display: none !important;
+}
+
+.wpcf7-not-valid{
+    border: 2px solid #dc3232 !important;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output{
+    background: #ffb900;
+}
+
+.wpcf7-submit{
+    cursor: pointer;
+}

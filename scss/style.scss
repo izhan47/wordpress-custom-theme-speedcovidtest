@@ -1,0 +1,622 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+      url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@import "fonts";
+@import "vars";
+@import "normalize";
+@import "mixins.scss";
+@import "plagins/swiper-bundle";
+@import "forms";
+@import "common/burger/burger";
+@import "grid";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+html {
+  font-size: 10px;
+  height: 100%;
+}
+html,
+body {
+  min-width: $minwidth;
+  margin: 0 auto;
+}
+body {
+  line-height: 1;
+  font-family: $mainFontFamily;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: $textColor;
+  font-size: 1.6rem;
+  transition: opacity 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100%;
+
+  &._lock {
+    overflow: hidden;
+  }
+
+  &.is-load {
+    & ._preload-body {
+      opacity: 0;
+      visibility: hidden;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+._preload-body {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  transition: all 0.6s ease 0.2s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 4px solid #6e6e6e;
+    border-right: 4px solid #fff;
+    transform: translate(-50%, -50%);
+    animation: preloadBody 2s linear infinite;
+  }
+}
+
+@keyframes preloadBody {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+input,
+button,
+textarea {
+  font-family: $mainFontFamily;
+}
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.center {
+  text-align: center;
+}
+
+._page {
+  flex: 1 1 auto;
+  padding: 0px 0;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ibg {
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+.old-price {
+  color: rgba($textColor, 0.58);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2em;
+  text-decoration: line-through;
+}
+.price {
+  color: $mainColor2;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2em;
+}
+
+.title-1 {
+  font-size: 57px;
+  font-weight: 800;
+  line-height: 1.2em;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (max-width: $md3+px) {
+    font-size: 56px;
+    line-height: 55px;
+  }
+}
+.title-2 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2em;
+
+  @media (max-width: $md3+px) {
+    font-size: 32px;
+  }
+}
+
+.title-3 {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2em;
+  margin-bottom: 16px;
+  & svg {
+    color: $mainColor2;
+    margin-right: 16px;
+  }
+}
+
+.title-4 {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2em;
+}
+
+.title-5 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2em;
+}
+
+.title-6 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2em;
+  text-transform: uppercase;
+
+  & svg {
+    margin-right: 8px;
+    color: $mainColor2;
+    font-size: 1.3em;
+    margin-left: 4px;
+  }
+}
+
+.suptitle {
+  color: $mainColor2;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+.suptitle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2em;
+  min-height: 36px;
+  border-radius: 999px;
+  border: 1px solid #ffffff;
+  padding: 6px 12px;
+
+  & svg {
+    margin-right: 10px;
+    height: 19px;
+    width: auto;
+  }
+}
+.subtitle {
+}
+
+.text {
+}
+
+.btn-default {
+  display: inline-flex;
+  box-shadow: 0 2px 0 #277308;
+  border-radius: 3px;
+  background-color: $mainColor;
+  min-height: 48px;
+  min-width: 199px;
+  padding: 10px 16px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  transition: all 0.3s ease;
+
+  @media (min-width: 992px) {
+    &:hover {
+      background-color: $mainColor2;
+      box-shadow: 0 2px 0 #177fa8;
+    }
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 0px 0 #177fa8 !important;
+  }
+
+  & svg {
+    margin-right: 15px;
+  }
+}
+
+button.btn-default {
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  min-height: 52px;
+  border-radius: 5px;
+  border: 1px solid rgba(#153452, 0.35);
+  background-color: #ffffff;
+  color: $textColor;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+
+  &::placeholder {
+    color: rgba($textColor, 0.62);
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.textarea {
+  resize: none;
+  height: 135px;
+  border: 1px solid rgba(#153452, 0.35);
+  border-radius: 5px;
+  padding: 16px 20px;
+  background-color: #ffffff;
+  color: $textColor;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+
+  &::placeholder {
+    color: rgba($textColor, 0.62);
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.link {
+  color: $mainColor;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2em;
+  display: inline-block;
+  padding-right: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &.link_blue {
+    color: $mainColor2;
+  }
+
+  &:before {
+    position: absolute;
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 14px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+
+  @media (min-width: 992px) {
+    &:hover {
+      color: $mainColor2;
+      &.link_blue {
+        color: $mainColor;
+      }
+      &:before {
+        transform: translateY(-50%) translateX(4px);
+      }
+    }
+  }
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > li {
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    & > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 3px;
+      background-color: rgba(#36416c, 0.11);
+      color: #5c6682;
+      font-size: 16px;
+      transition: all 0.3s ease;
+
+      @media (min-width: 992px) {
+        &:hover {
+          color: $mainColor2;
+        }
+      }
+    }
+  }
+}
+
+.label-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px 12px 0 0;
+  background-color: #dceef6;
+  padding: 6px 13px;
+  min-height: 29px;
+  min-width: 159px;
+  color: $mainColor2;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1em;
+  text-transform: uppercase;
+
+  & svg {
+    height: 14px;
+    width: auto;
+    margin-right: 8px;
+  }
+}
+
+.text-content {
+  color: rgba($textColor, 0.75);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.625em;
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  & h1 {
+    color: $textColor;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 1.4em;
+    margin-bottom: 0.4em;
+  }
+  & h2 {
+    color: $textColor;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 1.4em;
+    margin-bottom: 0.4em;
+  }
+  & h3 {
+    color: $textColor;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.4em;
+    margin-bottom: 0.4em;
+  }
+  & h4 {
+    color: $textColor;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 1.4em;
+    margin-bottom: 0.2em;
+  }
+
+  & h5 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin-bottom: 8px;
+    color: $textColor;
+  }
+  & h6 {
+    color: $textColor;
+    font-size: 18px;
+  }
+
+  & p {
+    margin-bottom: 1.2em;
+
+    & ~ h5 {
+      margin-top: 28px;
+    }
+
+    & ~ h6 {
+      margin-top: 1.4em;
+    }
+
+    & a {
+      color: $mainColor2;
+      text-decoration: underline;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      @media (min-width: 992px) {
+        &:hover {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+
+  & ul {
+    margin-bottom: 1.2em;
+
+    & > li {
+      position: relative;
+      padding-left: 1.6em;
+      margin-bottom: 0.14em;
+
+      &:before {
+        position: absolute;
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: $mainColor2;
+        top: 0;
+        left: 0.3em;
+      }
+    }
+  }
+
+  & ol {
+    margin-bottom: 1.2em;
+  }
+
+  & figure {
+  }
+}
+
+.inline{
+  display: inline;
+
+  a{
+    color: rgba(6,17,58,.45);
+    transition: all .3s ease;
+    text-decoration: underline;
+    font-size: 12px;
+
+    &:hover{
+      color: #1b96c6;
+      text-decoration: underline;
+    }
+  }
+
+  *{
+    display: inline;
+  }
+}
+
+.test-b{
+  .fa-clock{
+    color: #1b96c6;
+    margin-right: 4px;
+  }
+}
+
+@import "common/header/#header";
+@import "common/footer/#footer";
+@import "common/checkbox/checkbox";
+@import "common/rating/rating";
+@import "common/hero/hero";
+@import "common/hero-v2/hero-v2";
+@import "common/breadcrumbs/breadcrumbs";
+@import "common/contact-form/contact-form";
+@import "common/get-tested/get-tested";
+@import "common/hero-v3/hero-v3";
+@import "common/hero-v4/hero-v4";
+@import "common/pagination/pagging";
+
+@import "pages/#home";
+@import "pages/location"; 
+@import "pages/contact"; 
+@import "pages/modular";
+@import "pages/news-single";
+@import "pages/appointment";
+@import "pages/text-page";
+@import "pages/news-list";
+ 

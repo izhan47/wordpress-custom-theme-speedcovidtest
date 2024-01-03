@@ -1,0 +1,47 @@
+.pagging {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 50px;
+
+    &__arrow {
+        display: inline-flex;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+
+        & > li {
+            margin: 0 6px;
+        }
+    }
+
+    &__item {
+    }
+}
+
+.pagination{
+    width: 100%;
+    text-align: center;
+
+    .page-numbers{
+        padding: 5px;
+        color: #1b96c6;
+        transition: all 0.2s ease-in-out; 
+
+        &:hover{
+            color: #43b91f;
+        }
+
+        &.current{
+            color: #06113a;
+
+            &:hover{
+                color: #06113a; 
+            }
+        }
+    }
+}
+
+                    

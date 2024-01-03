@@ -1,0 +1,33 @@
+.contact-form {
+    &__title {
+        margin-bottom: 22px;
+    }
+
+    &__text {
+        max-width: 710px;
+        margin-bottom: 17px;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+        & .checkbox-wrap {
+            padding: 5px 0;
+        }
+    }
+
+    &__submit {
+        &.btn-default {
+            background-color: $mainColor2;
+            box-shadow: 0 2px 0 #177fa8;
+            width: 100%;
+            min-height: 54px;
+
+            @media (min-width: 992px) {
+                &:hover {
+                    background-color: $mainColor;
+                    box-shadow: 0 2px 0 #277308;
+                }
+            }
+        }
+    }
+}
